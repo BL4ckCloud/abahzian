@@ -84,7 +84,7 @@ title  Activation_Dunia_Bermain_Digital %dbdver%
 
 set _args=
 set _elev=
-set _MASunattended=
+set _DBDunattended=
 
 set _args=%*
 if defined _args set _args=%_args:"=%
@@ -94,7 +94,7 @@ if /i "%%A"=="-el"                    set _elev=1
 )
 )
 
-if defined _args echo "%_args%" | find /i "/" >nul && set _MASunattended=1
+if defined _args echo "%_args%" | find /i "/" >nul && set _DBDunattended=1
 
 ::========================================================================================================================================
 
@@ -122,14 +122,14 @@ if %winbuild% LSS 7600 (
 %nceline%
 echo Unsupported OS version detected [%winbuild%].
 echo Project is supported only for Windows 7/8/8.1/10/11 and their Server equivalent.
-goto MASend
+goto DBDend
 )
 
 for %%# in (powershell.exe) do @if "%%~$PATH:#"=="" (
 %nceline%
 echo Unable to find powershell.exe in the system.
 echo Aborting...
-goto MASend
+goto DBDend
 )
 
 ::========================================================================================================================================
@@ -156,7 +156,7 @@ echo Script is launched from the temp folder,
 echo Most likely you are running the script directly from the archive file.
 echo:
 echo Extract the archive file and launch the script from the extracted folder.
-goto MASend
+goto DBDend
 )
 )
 
@@ -168,7 +168,7 @@ if not defined _elev %psc% "start cmd.exe -arg '/c \"!_PSarg:'=''!\"' -verb runa
 %nceline%
 echo This script needs admin rights.
 echo To do so, right click on this script and select 'Run as administrator'.
-goto MASend
+goto DBDend
 )
 
 if not exist "%SystemRoot%\Temp\" mkdir "%SystemRoot%\Temp" %nul%
@@ -176,7 +176,7 @@ if not exist "%SystemRoot%\Temp\" mkdir "%SystemRoot%\Temp" %nul%
 ::========================================================================================================================================
 
 
-if defined _MASunattended set quedit=1
+if defined _DBDunattended set quedit=1
 for %%# in (%_args%) do (if /i "%%#"=="-qedit" set quedit=1)
 
 reg query HKCU\Console /v QuickEdit %nul2% | find /i "0x0" %nul1% || if not defined quedit (
@@ -202,7 +202,7 @@ echo ________________________________________________
 echo Versi Kamu perlu update, Hubungi https://t.me/@AbahZian %dbdver%
 echo ________________________________________________
 echo:
-if not defined _MASunattended (
+if not defined _DBDunattended (
 echo [1] Get Latest DBD
 echo [0] Continue Anyway
 echo:
@@ -5335,7 +5335,6 @@ exit /b
 
 ::========================================================================================================================================
 
-::  https://github.com/Gamers-Against-Weed/Set-WindowsCbsEdition
 
 :cbsxml:[
 param (
@@ -5665,7 +5664,7 @@ exit /b
 
 :DBDend
 echo:
-if defined _MASunattended timeout /t 2 & exit /b
+if defined _DBDunattended timeout /t 2 & exit /b
 echo Press any key to exit...
 pause >nul
 exit /b
