@@ -3,10 +3,10 @@ $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$DownloadURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/'
+$DURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/'
 
 
-$URLs = @($DownloadURL1)
+$URLs = @($DURL1)
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
