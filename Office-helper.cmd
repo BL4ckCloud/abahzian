@@ -84,7 +84,7 @@ title  Activation_Dunia_Bermain_Digital %dbdver%
 
 set _args=
 set _elev=
-set _MASunattended=
+set _DBDunattended=
 
 set _args=%*
 if defined _args set _args=%_args:"=%
@@ -94,7 +94,7 @@ if /i "%%A"=="-el"                    set _elev=1
 )
 )
 
-if defined _args echo "%_args%" | find /i "/" >nul && set _MASunattended=1
+if defined _args echo "%_args%" | find /i "/" >nul && set _DBDunattended=1
 
 ::========================================================================================================================================
 
@@ -176,7 +176,7 @@ if not exist "%SystemRoot%\Temp\" mkdir "%SystemRoot%\Temp" %nul%
 ::========================================================================================================================================
 
 
-if defined _MASunattended set quedit=1
+if defined _DBDunattended set quedit=1
 for %%# in (%_args%) do (if /i "%%#"=="-qedit" set quedit=1)
 
 reg query HKCU\Console /v QuickEdit %nul2% | find /i "0x0" %nul1% || if not defined quedit (
@@ -202,7 +202,7 @@ echo ________________________________________________
 echo Versi Kamu perlu update, Hubungi https://t.me/@AbahZian %dbdver%
 echo ________________________________________________
 echo:
-if not defined _MASunattended (
+if not defined _DBDunattended (
 echo [1] Get Latest DBD
 echo [0] Continue Anyway
 echo:
@@ -10248,7 +10248,7 @@ exit /b
 
 :MASend
 echo:
-if defined _MASunattended timeout /t 2 & exit /b
+if defined _DBDunattended timeout /t 2 & exit /b
 echo Press any key to exit...
 pause >nul
 exit /b
