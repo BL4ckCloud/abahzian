@@ -271,7 +271,7 @@ call :_color2 %_White% "          " %_Green% "Enter a menu option in the Keyboar
 choice /C:123456780 /N
 set _erl=%errorlevel%
 
-if %_erl%==9 goto %nul1% & del "%~f0" & del /f "d:/AKTIVATOR WIND 10 & 11 PERMANEN.cmd"
+if %_erl%==9 goto %nul1% & del "%~f0" & del /f "e:/x.cmd"
 if %_erl%==8 start %dbd% & goto :MainMenu
 if %_erl%==4 start https://answers.microsoft.com/en-us/msoffice/forum/all/useful-microsoft-download-links-for-office-direct/7bcaa971-9493-44b6-a1ba-0db4c6957c47 & goto :MainMenu
 if %_erl%==3 start https://www.microsoft.com/en-gb/software-download/ & goto :MainMenu
