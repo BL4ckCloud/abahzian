@@ -267,7 +267,7 @@ echo:             [8] Bantuan
 echo:             [0] Exit
 echo:       ______________________________________________________________
 echo:
-call :_color2 %_White% "          " %_Green% "Enter a menu option in the Keyboard [1,2,3,4,8,0] :"
+call :_color2 %_White% "          " %Blue% "Enter a menu option in the Keyboard [1,2,3,4,8,0] :"
 choice /C:123456780 /N
 set _erl=%errorlevel%
 
@@ -437,7 +437,7 @@ if defined _perm (
 cls
 echo ___________________________________________________________________________________________
 echo:
-call :dk_color2 %_White% "     " %Green% "Checking: %winos% is Permanently Activated."
+call :dk_color2 %_White% "     " %Blue% "Checking: %winos% is Permanently Activated."
 call :dk_color2 %_White% "     " %Gray% "Activation is not required."
 echo ___________________________________________________________________________________________
 if %_unattended%==1 goto dk_done
@@ -738,7 +738,7 @@ call :dk_act
 call :dk_checkperm
 if defined _perm (
 echo:
-call :dk_color %Green% "%winos% is permanently activated with a digital license."
+call :dk_color %Blue% "%winos% is permanently activated with a digital license."
 goto :dl_final
 )
 
@@ -812,7 +812,7 @@ call :dk_color2 %Blue% "Check this page for help" %_Yellow% " %dbd%licensing-ser
 
 echo:
 if defined _perm (
-call :dk_color %Green% "%winos% is permanently activated with a digital license."
+call :dk_color %Blue% "%winos% is permanently activated with a digital license."
 ) else (
 call :dk_color %Red% "Activation Failed %error_code%"
 if defined notworking (
@@ -1971,7 +1971,7 @@ if !errorlevel! NEQ 0 cscript //nologo %windir%\system32\slmgr.vbs /rilc %nul%
 
 echo:
 if not defined error (
-call :dk_color %Green% "Office is permanently activated."
+call :dk_color %Blue% "Office is permanently activated."
 echo Help: %dbd%
 ) else (
 call :dk_color %Red% "Some errors were detected."
@@ -2057,7 +2057,7 @@ if defined _unerror (
 call :dk_color %Red% "Failed to uninstall key activation."
 call :dk_color %Blue% "Close Office apps if they are running and try again."
 ) else (
-call :dk_color %Green% "Successfully uninstalled key activation."
+call :dk_color %Blue% "Successfully uninstalled key activation."
 )
 )
 echo __________________________________________________________________________________________
@@ -2781,7 +2781,7 @@ if defined _perm (
 cls
 echo ___________________________________________________________________________________________
 echo:
-call :dk_color2 %_White% "     " %Green% "Checking: %winos% is Permanently Activated."
+call :dk_color2 %_White% "     " %Blue% "Checking: %winos% is Permanently Activated."
 call :dk_color2 %_White% "     " %Gray% "Activation is not required."
 echo ___________________________________________________________________________________________
 if %_unattended%==1 goto dk_done
@@ -9048,7 +9048,7 @@ echo:
 echo %line%
 echo:
 echo:
-call :_color %Green% "Finished"
+call :_color %Blue% "Finished"
 goto :at_back
 
 ::========================================================================================================================================
