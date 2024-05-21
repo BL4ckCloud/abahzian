@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<tittle>QR - Barcode Scanner </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href=https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+			/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.js"></script>
+		<script src="https://dbdigital.000webhostapp.com/widget.js></script>
+	</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<br>
+			<center><div id="qr-reader" class"qr-reader-custom"></div></center>
+			<div id="qr-reader" style="width: 600px"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function onScanSuccess(decodedText, decodedResult) {
+    console.log(`Code scanned = ${decodedText}`, decodedResult);
+}
+var html5QrcodeScanner = new Html5QrcodeScanner(
+	"qr-reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+	</script>
+
+</html>
+
